@@ -488,7 +488,7 @@ name: sec3.1-fig:Geom_information
 ```{figure} images/CCX_inp_images/静力学面-面接触.png
 ---
 width: 800px
-name: sec4-fig:Static_surface-to-surface_contact
+name: sec3.2-fig:Static_surface-to-surface_contact
 ---
 静力学面-面接触参数设置
 ```
@@ -504,7 +504,7 @@ name: sec4-fig:Static_surface-to-surface_contact
 ```{figure} images/CCX_inp_images/耦合.png
 ---
 width: 800px
-name: sec4-fig:Couple
+name: sec3.3-fig:Coupling
 ---
 耦合参数以及效果展示图
 ```
@@ -528,10 +528,25 @@ name: sec4-fig:Couple
     *contact file  ##保存接触应力的文件##
     CSTR  ## abaqus中没有定义，ccx中指contact stress 接触应力##
     *END STEP ##当前步骤（STEP）的结束##
-
+ 
+两款软件的运行计算结果如下，最大位移基本一致，最大应力出现位置是一致的，但是最大值有较大差距。
+```{figure} images/Tube/位移云图.png
+---
+width: 800px
+name: sec3.4-fig:Static_surface-to-surface_contact
+---
+Tube算例位移云图（左ABAQUS,右CCX）
+```
+```{figure} images/Tube/应力云图.png
+---
+width: 800px
+name: sec3.5-fig:Static_surface-to-surface_contact
+---
+Tube算例应力云图（左ABAQUS,右CCX）
+```
 ### $ABAQUS$与$CCX$算例计算结果对比
 
->算例：几何尺寸：边长$10mm$的立方体，材料属性：密度$1$，弹性模量$210$，泊松比$0.3$。塑性：$0.24$，$0$。载荷：一端固支，另一端拉伸$1mm$。
+>算例：几何尺寸：边长10mm的立方体，材料属性：密度1，弹性模量210，泊松比0.3。塑性：0.24，0。载荷：一端固支，另一端拉伸$1mm$。
 
 **1. 静力学+线弹性**
 
@@ -672,7 +687,7 @@ name: sec4.1.3-fig:Example parameters and models
 ---
 应力云图（左ABAQUS,右CCX）
 ```
-
+由上图可知，计算结果中的最大应力并不是一致的。
 
 
 
