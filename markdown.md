@@ -626,9 +626,9 @@ name: sec3.4.2-fig:Dynamics_Elastoplastic_nlgeom_stress
 应力云图（显示动力学、弹塑性、几何非线性）
 ```
 
-### **$CCX$中的刚体定义**
+### **CCX中的刚体定义**
 
->刚体定义参考算例（$Biegung$），以实体单元为基准，根据相应语句进行刚体定义（具体细节如下）。
+>刚体定义参考算例（Biegung），以实体单元为基准，根据相应语句进行刚体定义（具体细节如下）。
 ```
 *include, input=rmov.nam （包含节点和网格信息 *NSET,NSET=Nrmov，*ELSET,ELSET=Ermov ）
 *include, input=rfix.nam
@@ -672,7 +672,7 @@ name: sec4.1.1-fig:Example parameters and models
 ---
 算例参数及模型
 ```
-**算例Biegung计算结果对比**
+**算例Biegung计算结果对比(Static Nlgeom)**
 ```{figure} images/Biegung/位移云图.png
 ---
 width: 800px
@@ -689,6 +689,14 @@ name: sec4.1.3-fig:Example parameters and models
 ```
 由上图可知，计算结果中的最大应力并不是一致的。
 
+修改接触类型：node to surface <修改为> surface to surface，ABAQUS就算结果如下，最大应力值相差266MPa。然而CCX计算时报错"*ERROR: too many cutbacks"无结果。
+```{figure} images/Biegung/ABAQUS_应力.png
+---
+width: 800px
+name: sec4.1.3-fig:Example parameters and models
+---
+应力云图（左node to surface,右surface to surface）
+```
 
 
 
