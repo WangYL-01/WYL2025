@@ -27,3 +27,12 @@
  > git push origin main  （push 到github以后，github会基于新的源文件生成新网页，即使你本地没有 jb build . 也没关系）
  > git pull （把网站上的最新内容同步下来）
 ```
+% 更新时间
+<br><br><br>
+<span style="font-family: Arial, sans-serif; color: gray;">
+  上一次更新时间：<span id="update-time"></span>
+</span>
+
+<script>
+  document.getElementById("update-time").innerText = new Date().toLocaleString();
+</script>
